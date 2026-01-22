@@ -37,18 +37,5 @@ let package = Package(
       name: "Candle_NumericsShims",
       exclude: excludedFilenames
     ),
-
-    // MARK: - Unit test bundles
-    .testTarget(
-      name: "ComplexTests",
-      dependencies: ["_TestSupport"],
-      exclude: ["CMakeLists.txt"]
-    ),
-
-    .testTarget(
-      name: "RealTests",
-      dependencies: ["_TestSupport"],
-      exclude: ["CMakeLists.txt"]
-    )
   ]
 )
