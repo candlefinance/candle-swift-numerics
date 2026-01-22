@@ -9,7 +9,7 @@
 //
 //===----------------------------------------------------------------------===//
 
-import RealModule
+import CandleRealModule
 
 public protocol FixedWidthFloatingPoint: BinaryFloatingPoint
 where Exponent: FixedWidthInteger,

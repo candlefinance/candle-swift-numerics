@@ -9,7 +9,7 @@
 //
 //===----------------------------------------------------------------------===//
 
-import RealModule
+import CandleRealModule
 
 // FloatingPoint does not refine Codable, so this is a conditional conformance.
 extension Complex: Decodable where RealType: Decodable {

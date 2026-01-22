@@ -15,56 +15,56 @@ import PackageDescription
 let excludedFilenames = ["CMakeLists.txt", "README.md"]
 
 let package = Package(
-  
+
   name: "swift-numerics",
   products: [
     .library(name: "ComplexModule", targets: ["ComplexModule"]),
     .library(name: "Numerics", targets: ["Numerics"]),
-    .library(name: "RealModule", targets: ["RealModule"]),
+    .library(name: "CandleRealModule", targets: ["CandleRealModule"]),
   ],
-  
+
   targets: [
     // MARK: - Public API
     .target(
       name: "ComplexModule",
-      dependencies: ["RealModule"],
+      dependencies: ["CandleRealModule"],
       exclude: excludedFilenames
     ),
-    
+
     .target(
       name: "Numerics",
-      dependencies: ["ComplexModule", "RealModule"],
+      dependencies: ["ComplexModule", "CandleRealModule"],
       exclude: excludedFilenames
     ),
-    
+
     .target(
-      name: "RealModule",
-      dependencies: ["_NumericsShims"],
+      name: "CandleRealModule",
+      dependencies: ["Candle_NumericsShims"],
       exclude: excludedFilenames,
       linkerSettings: [
         .linkedLibrary("m", .when(platforms: [.linux, .android]))
       ]
     ),
-    
+
     // MARK: - Implementation details
     .target(
-      name: "_NumericsShims",
+      name: "Candle_NumericsShims",
       exclude: excludedFilenames
     ),
-    
+
     .target(
       name: "_TestSupport",
       dependencies: ["Numerics"],
       exclude: ["CMakeLists.txt"]
     ),
-    
+
     // MARK: - Unit test bundles
     .testTarget(
       name: "ComplexTests",
       dependencies: ["_TestSupport"],
       exclude: ["CMakeLists.txt"]
     ),
-    
+
     .testTarget(
       name: "RealTests",
       dependencies: ["_TestSupport"],
