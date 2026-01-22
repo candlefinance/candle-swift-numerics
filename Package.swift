@@ -18,25 +18,11 @@ let package = Package(
 
   name: "candle-swift-numerics",
   products: [
-    .library(name: "ComplexModule", targets: ["ComplexModule"]),
-    .library(name: "Numerics", targets: ["Numerics"]),
     .library(name: "CandleRealModule", targets: ["CandleRealModule"]),
   ],
 
   targets: [
     // MARK: - Public API
-    .target(
-      name: "ComplexModule",
-      dependencies: ["CandleRealModule"],
-      exclude: excludedFilenames
-    ),
-
-    .target(
-      name: "Numerics",
-      dependencies: ["ComplexModule", "CandleRealModule"],
-      exclude: excludedFilenames
-    ),
-
     .target(
       name: "CandleRealModule",
       dependencies: ["Candle_NumericsShims"],
@@ -50,12 +36,6 @@ let package = Package(
     .target(
       name: "Candle_NumericsShims",
       exclude: excludedFilenames
-    ),
-
-    .target(
-      name: "_TestSupport",
-      dependencies: ["Numerics"],
-      exclude: ["CMakeLists.txt"]
     ),
 
     // MARK: - Unit test bundles
