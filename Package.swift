@@ -25,7 +25,7 @@ let package = Package(
     // MARK: - Public API
     .target(
       name: "CandleRealModule",
-      dependencies: ["Candle_NumericsShims"],
+      dependencies: ["_Candle_NumericsShims"],
       exclude: excludedFilenames,
       linkerSettings: [
         .linkedLibrary("m", .when(platforms: [.linux, .android]))
@@ -34,7 +34,7 @@ let package = Package(
 
     // MARK: - Implementation details
     .target(
-      name: "Candle_NumericsShims",
+      name: "_Candle_NumericsShims",
       exclude: excludedFilenames
     ),
   ]

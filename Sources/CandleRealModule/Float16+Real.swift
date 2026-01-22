@@ -9,7 +9,7 @@
 //
 //===----------------------------------------------------------------------===//
 
-import Candle_NumericsShims
+import _Candle_NumericsShims
 
 // Float16 is only available on macOS when targeting arm64.
 #if !((os(macOS) || targetEnvironment(macCatalyst)) && arch(x86_64))

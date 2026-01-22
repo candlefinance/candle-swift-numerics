@@ -9,7 +9,7 @@
 //
 //===----------------------------------------------------------------------===//
 
-import Candle_NumericsShims
+import _Candle_NumericsShims
 
 extension Double: Real {
   @_transparent
