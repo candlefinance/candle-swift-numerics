@@ -16,7 +16,7 @@ let excludedFilenames = ["CMakeLists.txt", "README.md"]
 
 let package = Package(
 
-  name: "candle-swift-numerics",
+  name: "swift-numerics",
   products: [
     .library(name: "CandleRealModule", targets: ["CandleRealModule"]),
   ],
