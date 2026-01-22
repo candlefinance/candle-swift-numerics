@@ -9,7 +9,7 @@
 //
 //===----------------------------------------------------------------------===//
 
-import _Candle_NumericsShims
+import Candle_NumericsShims
 
 public enum Relaxed { }
 

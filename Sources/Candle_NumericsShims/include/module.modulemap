@@ -1,0 +1,3 @@
+module Candle_NumericsShims {
+  header "_NumericsShims.h"
+}
